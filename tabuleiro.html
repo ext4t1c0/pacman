@@ -1,0 +1,492 @@
+
+<!--            Pacman         -->
+<!--   UC: PWBD                -->
+<!--   Docente: Jorge Machado  -->
+<!--   Discente: João Pereira  -->
+<!--   a16921   -   2014/2015  -->
+
+<head>
+
+<title>Pac-Man</title>
+
+<script type="text/javascript" src="java/pac.js"></script>
+
+
+<style type="text/css">
+html, body { background:#000; color:#FFF; margin:0; padding:0 }
+img { border:none; display:block; }
+#caixa_jogo { position:relative; margin-top:10px; }
+</style>
+</head>
+
+<body onload="ecra_inicial();">
+
+<div id="caixa_jogo">
+<div id="jog_1" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('jog_1', "1up", "#DEDEDE"); </script></div>
+<div id="pontuacao_jog1" style="position:absolute; left:-1000px; top:0; width:155px; height:8px;">
+	<div id="pontuacao_jog1_0" style="position:absolute; left:85px; top:0;">
+		<div id="pontuacao_jog1_0_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_0_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog1_1" style="position:absolute; left:70px; top:0;">
+		<div id="pontuacao_jog1_1_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_1_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog1_2" style="position:absolute; left:55px; top:0;">
+		<div id="pontuacao_jog1_2_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_2_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog1_3" style="position:absolute; left:40px; top:0;">
+		<div id="pontuacao_jog1_3_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_3_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog1_4" style="position:absolute; left:25px; top:0;">
+		<div id="pontuacao_jog1_4_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_4_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog1_5" style="position:absolute; left:10; top:0;">
+		<div id="pontuacao_jog1_5_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog1_5_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+</div>
+
+<div id="pontuacao_jog2" style="position:absolute; left:-1000px; top:0; width:55px; height:8px;">
+	<div id="pontuacao_jog2_0" style="position:absolute; left:85px; top:0;">
+		<div id="pontuacao_jog2_0_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_0_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog2_1" style="position:absolute; left:70px; top:0;">
+		<div id="pontuacao_jog2_1_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_1_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog2_2" style="position:absolute; left:55px; top:0;">
+		<div id="pontuacao_jog2_2_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_2_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog2_3" style="position:absolute; left:40px; top:0;">
+		<div id="pontuacao_jog2_3_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_3_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog2_4" style="position:absolute; left:25px; top:0;">
+		<div id="pontuacao_jog2_4_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_4_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_jog2_5" style="position:absolute; left:10; top:0;">
+		<div id="pontuacao_jog2_5_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_jog2_5_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+</div>
+
+<div id="pontuacao_maxim" style="position:absolute; left:-1000px; top:0; width:55px; height:8px;">
+	<div id="pontuacao_maxim_0" style="position:absolute; left:85px; top:0;">
+		<div id="pontuacao_maxim_0_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_0_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_maxim_1" style="position:absolute; left:70px; top:0;">
+		<div id="pontuacao_maxim_1_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_1_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_maxim_2" style="position:absolute; left:55px; top:0;">
+		<div id="pontuacao_maxim_2_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_2_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_maxim_3" style="position:absolute; left:40px; top:0;">
+		<div id="pontuacao_maxim_3_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_3_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_maxim_4" style="position:absolute; left:25px; top:0;">
+		<div id="pontuacao_maxim_4_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_4_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+	<div id="pontuacao_maxim_5" style="position:absolute; left:10; top:0;">
+		<div id="pontuacao_maxim_5_0" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/0.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_1" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/1.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_2" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/2.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_3" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/3.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_4" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/4.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_5" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/5.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_6" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/6.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_7" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/7.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_8" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/8.gif" width="14" height="14" /></div>
+		<div id="pontuacao_maxim_5_9" style="position:absolute; left:0; top:0; width:14px; height:14px;; background:#DEDEDE;"><img alt="" src="imagens/letras/9.gif" width="14" height="14" /></div>
+	</div>
+</div>
+
+<div id="maxpontuacao" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('maxpontuacao', "pontuacao", "#DEDEDE"); </script></div>
+<div id="jog_2" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('jog_2', "2up", "#DEDEDE"); </script></div>
+
+
+
+<div id="ecra_inicial_obj" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;">
+	<div id="ecra_inicial_obj_0" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_0', "fantasma / nickname", "#DEDEDE"); </script></div>
+	<div id="ecra_inicial_obj_1" style="position:absolute; left:-1000px; top:0;"><img alt="" src="imagens/blinky_r0.gif" width="22" height="22" /></div>
+	<div id="ecra_inicial_obj_2" style="position:absolute; height:7px; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_2', "- shadow", "#FF131A"); </script></div>
+	<div id="ecra_inicial_obj_3" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_3', "'blinky'", "#FF131A"); </script></div>
+	<div id="ecra_inicial_obj_4" style="position:absolute; left:-1000px; top:0;"><img alt="" src="imagens/pinky_r0.gif" width="22" height="22" /></div>
+	<div id="ecra_inicial_obj_5" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_5', "- speedy", "#FFB9DC"); </script></div>
+	<div id="ecra_inicial_obj_6" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_6', "'pinky'", "#FFB9DC"); </script></div>
+	<div id="ecra_inicial_obj_7" style="position:absolute; left:-1000px; top:0;"><img alt="" src="imagens/inky_r0.gif" width="22" height="22" /></div>
+	<div id="ecra_inicial_obj_8" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_8', "- bashful", "#00FDDF"); </script></div>
+	<div id="ecra_inicial_obj_9" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_9', "'inky'", "#00FDDF"); </script></div>
+	<div id="ecra_inicial_obj_10" style="position:absolute; left:-1000px; top:0;"><img alt="" src="imagens/clyde_r0.gif" width="22" height="22" /></div>
+	<div id="ecra_inicial_obj_11" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_11', "- pokey", "#FFB759"); </script></div>
+	<div id="ecra_inicial_obj_12" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('ecra_inicial_obj_12', "'clyde'", "#FFB759"); </script></div>
+</div>
+
+<div id="inicializa_mapa_obj" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;">
+	<div id="inicializa_mapa_obj_0" style="position:absolute; left:280px; top:303px;"><script type="text/javascript">inicializa_texto('inicializa_mapa_obj_0', "Escolhe", "#FFB759"); </script></div>
+	<div id="inicializa_mapa_obj_1" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('inicializa_mapa_obj_1', "1 jogador", "#00FDDF"); </script></div>
+	<div id="inicializa_mapa_obj_2" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('inicializa_mapa_obj_2', "1 ou 2 jogadores", "#00FDDF"); </script></div>
+	<div id="inicializa_mapa_obj_3" style="position:absolute; left:228px; top:420px;"><script type="text/javascript">inicializa_texto('inicializa_mapa_obj_3', "p w b d 2014-15", "#FFB89C"); </script></div>
+	<div id="inicializa_mapa_obj_4" style="position:absolute; left:248px; top:450px;"><script type="text/javascript">inicializa_texto('inicializa_mapa_obj_4', "joao pereira", "#FFB9DC"); </script></div>
+</div>
+
+
+
+
+<div id="mapa_jogo_img" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;"><img alt="" src="imagens/board.png" width="680" height="740" /></div>
+<div id="mapa_jogo_flash" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;"><img alt="" src="imagens/board_flash.png" width="680" height="740" /></div>
+
+<div id="comida_img" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;">
+<script type="text/javascript">
+
+for (comY = 0; comY <= mapa_comida.length - 1; comY++) {
+	for (comX = 0; comX <= mapa_comida[comY].length - 1; comX++) {
+		if (mapa_comida[comY][comX] == 1)
+			document.write('<div id="comida_' + comY + '_' + comX + '" style="position:absolute; left:0; top:0; width:12px; height:12px;"><img alt="" src="imagens\/comida.png" width="12" height="12" \/><\/div>');
+	}
+}
+
+</script>
+</div>
+
+<div id="comida_pw_img" style="position:absolute; left:-1000px; top:0; width:680px; height:740px;">
+<script type="text/javascript">
+
+for (comY = 0; comY <= mapa_comida.length - 1; comY++) {
+	for (comX = 0; comX <= mapa_comida[comY].length - 1; comX++) {
+		if (mapa_comida[comY][comX] == 2)
+			document.write('<div id="comida_pw_' + comY + '_' + comX + '" style="position:absolute; left:-1000px; top:0; width:18px; height:18px;"><img alt="" src="imagens\/comida_pw.png" width="18" height="18" \/><\/div>');
+	}
+}
+
+</script>
+</div>
+
+
+<div id="jogador_1" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('jogador_1', " jogador 1", "#00FDDF"); </script></div>
+<div id="jogador_2" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('jogador_2', " jogador 2", "#00FDDF"); </script></div>
+<div id="preparado" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('preparado', "pronto!", "#FFFC45"); </script></div>
+<div id="game_over" style="position:absolute; left:-1000px; top:0;"><script type="text/javascript">inicializa_texto('game_over', "game  over", "#FF131A"); </script></div>
+
+
+<!-- PACMAN -->
+<div id="pacman0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_l0.gif" width="22" height="22" /></div>
+<div id="pacman1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_l1.gif" width="22" height="22" /></div>
+<div id="pacman2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_l2.gif" width="22" height="22" /></div>
+<div id="pacman3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_l1.gif" width="22" height="22" /></div>
+<div id="pacman4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_r0.gif" width="22" height="22" /></div>
+<div id="pacman5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_r1.gif" width="22" height="22" /></div>
+<div id="pacman6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_r2.gif" width="22" height="22" /></div>
+<div id="pacman7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_r1.gif" width="22" height="22" /></div>
+<div id="pacman8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_u0.gif" width="22" height="22" /></div>
+<div id="pacman9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_u1.gif" width="22" height="22" /></div>
+<div id="pacman10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_u2.gif" width="22" height="22" /></div>
+<div id="pacman11" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_u1.gif" width="22" height="22" /></div>
+<div id="pacman12" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_d0.gif" width="22" height="22" /></div>
+<div id="pacman13" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_d1.gif" width="22" height="22" /></div>
+<div id="pacman14" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_d2.gif" width="22" height="22" /></div>
+<div id="pacman15" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pac_d1.gif" width="22" height="22" /></div>
+<!-- BLINKY -->
+<div id="blinky0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_l0.gif" width="22" height="22" /></div>
+<div id="blinky1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_l1.gif" width="22" height="22" /></div>
+<div id="blinky2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="blinky3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="blinky4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="blinky5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="blinky6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="blinky7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="blinky8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_r0.gif" width="22" height="22" /></div>
+<div id="blinky9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_r1.gif" width="22" height="22" /></div>
+<div id="blinky10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="blinky11" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="blinky12" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="blinky13" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="blinky14" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="blinky15" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="blinky16" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_u0.gif" width="22" height="22" /></div>
+<div id="blinky17" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_u1.gif" width="22" height="22" /></div>
+<div id="blinky18" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="blinky19" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="blinky20" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="blinky21" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="blinky22" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="blinky23" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="blinky24" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_d0.gif" width="22" height="22" /></div>
+<div id="blinky25" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/blinky_d1.gif" width="22" height="22" /></div>
+<div id="blinky26" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="blinky27" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="blinky28" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="blinky29" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="blinky30" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<div id="blinky31" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<!-- PINKY -->
+<div id="pinky0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_l0.gif" width="22" height="22" /></div>
+<div id="pinky1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_l1.gif" width="22" height="22" /></div>
+<div id="pinky2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="pinky3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="pinky4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="pinky5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="pinky6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="pinky7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="pinky8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_r0.gif" width="22" height="22" /></div>
+<div id="pinky9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_r1.gif" width="22" height="22" /></div>
+<div id="pinky10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="pinky11" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="pinky12" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="pinky13" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="pinky14" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="pinky15" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="pinky16" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_u0.gif" width="22" height="22" /></div>
+<div id="pinky17" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_u1.gif" width="22" height="22" /></div>
+<div id="pinky18" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="pinky19" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="pinky20" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="pinky21" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="pinky22" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="pinky23" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="pinky24" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_d0.gif" width="22" height="22" /></div>
+<div id="pinky25" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/pinky_d1.gif" width="22" height="22" /></div>
+<div id="pinky26" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="pinky27" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="pinky28" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="pinky29" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="pinky30" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<div id="pinky31" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<!-- INKY -->
+<div id="inky0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_l0.gif" width="22" height="22" /></div>
+<div id="inky1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_l1.gif" width="22" height="22" /></div>
+<div id="inky2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="inky3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="inky4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="inky5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="inky6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="inky7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="inky8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_r0.gif" width="22" height="22" /></div>
+<div id="inky9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_r1.gif" width="22" height="22" /></div>
+<div id="inky10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="inky11" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="inky12" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="inky13" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="inky14" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="inky15" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="inky16" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_u0.gif" width="22" height="22" /></div>
+<div id="inky17" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_u1.gif" width="22" height="22" /></div>
+<div id="inky18" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="inky19" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="inky20" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="inky21" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="inky22" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="inky23" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="inky24" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_d0.gif" width="22" height="22" /></div>
+<div id="inky25" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/inky_d1.gif" width="22" height="22" /></div>
+<div id="inky26" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="inky27" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="inky28" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="inky29" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="inky30" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<div id="inky31" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<!-- CLYDE -->
+<div id="clyde0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_l0.gif" width="22" height="22" /></div>
+<div id="clyde1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_l1.gif" width="22" height="22" /></div>
+<div id="clyde2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="clyde3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="clyde4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="clyde5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="clyde6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="clyde7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_l.gif" width="22" height="22" /></div>
+<div id="clyde8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_r0.gif" width="22" height="22" /></div>
+<div id="clyde9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_r1.gif" width="22" height="22" /></div>
+<div id="clyde10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="clyde11" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="clyde12" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="clyde13" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="clyde14" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="clyde15" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_r.gif" width="22" height="22" /></div>
+<div id="clyde16" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_u0.gif" width="22" height="22" /></div>
+<div id="clyde17" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_u1.gif" width="22" height="22" /></div>
+<div id="clyde18" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="clyde19" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="clyde20" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="clyde21" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="clyde22" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="clyde23" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_u.gif" width="22" height="22" /></div>
+<div id="clyde24" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_d0.gif" width="22" height="22" /></div>
+<div id="clyde25" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/clyde_d1.gif" width="22" height="22" /></div>
+<div id="clyde26" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_0.gif" width="22" height="22" /></div>
+<div id="clyde27" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/azul_1.gif" width="22" height="22" /></div>
+<div id="clyde28" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_0.gif" width="22" height="22" /></div>
+<div id="clyde29" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/branco_1.gif" width="22" height="22" /></div>
+<div id="clyde30" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+<div id="clyde31" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/olhos_d.gif" width="22" height="22" /></div>
+
+<div id="morre0" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_0.gif"width="22" height="22" /></div>
+<div id="morre1" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_1.gif"width="22" height="22" /></div>
+<div id="morre2" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_2.gif"width="22" height="22" /></div>
+<div id="morre3" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_3.gif"width="22" height="22" /></div>
+<div id="morre4" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_4.gif"width="22" height="22" /></div>
+<div id="morre5" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_5.gif"width="22" height="22" /></div>
+<div id="morre6" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_6.gif"width="22" height="22" /></div>
+<div id="morre7" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_7.gif"width="22" height="22" /></div>
+<div id="morre8" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_8.gif"width="22" height="22" /></div>
+<div id="morre9" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_9.gif"width="22" height="22" /></div>
+<div id="morre10" style="position:absolute; left:-1000px; top:0; width:22px; height:22px;"><img alt="" src="imagens/morre_10.gif"width="22" height="22" /></div>
+</div>
+
+</body>
+
+</html>
+
+
+
+<!--            Pacman         -->
+<!--   UC: PWBD                -->
+<!--   Docente: Jorge Machado  -->
+<!--   Discente: João Pereira  -->
+<!--   a16921   -   2014/2015  -->
